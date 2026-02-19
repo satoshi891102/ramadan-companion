@@ -1,26 +1,172 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-background: #0A1628;
+  --color-surface: #111D32;
+  --color-elevated: #182640;
+  --color-gold: #D4A853;
+  --color-gold-dim: #B8923F;
+  --color-teal: #2EC4B6;
+  --color-teal-dim: #25A89C;
+  --color-text-primary: #F0F2F5;
+  --color-text-secondary: #8A92A6;
+  --color-border: #1E2D45;
+  --color-glass: rgba(17, 29, 50, 0.6);
+  --color-glass-border: rgba(212, 168, 83, 0.15);
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-arabic: 'Amiri', 'Noto Naskh Arabic', serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: #0A1628;
+    color: #F0F2F5;
+    font-family: 'Inter', system-ui, sans-serif;
+    min-height: 100dvh;
+    overflow-x: hidden;
+  }
+
+  /* Islamic geometric pattern background */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.03;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+      radial-gradient(circle at 25% 25%, #D4A853 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, #D4A853 1px, transparent 1px),
+      radial-gradient(circle at 50% 50%, #2EC4B6 0.5px, transparent 0.5px);
+    background-size: 60px 60px, 60px 60px, 30px 30px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .glass-card {
+    background: rgba(17, 29, 50, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 168, 83, 0.15);
+    border-radius: 16px;
+  }
+
+  .glass-card-teal {
+    background: rgba(17, 29, 50, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(46, 196, 182, 0.15);
+    border-radius: 16px;
+  }
+
+  .gold-glow {
+    box-shadow: 0 0 40px rgba(212, 168, 83, 0.15), 0 0 80px rgba(212, 168, 83, 0.05);
+  }
+
+  .teal-glow {
+    box-shadow: 0 0 40px rgba(46, 196, 182, 0.15), 0 0 80px rgba(46, 196, 182, 0.05);
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #D4A853 0%, #F0D68A 50%, #D4A853 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-header {
+    background: linear-gradient(135deg, #0A1628 0%, #111D32 40%, #1a2a4a 70%, #2a1f1a 100%);
+  }
+
+  .countdown-glow {
+    text-shadow: 0 0 20px rgba(212, 168, 83, 0.5), 0 0 40px rgba(212, 168, 83, 0.25);
+  }
+
+  .islamic-pattern-border {
+    background-image: repeating-linear-gradient(
+      90deg,
+      #D4A853 0px,
+      #D4A853 4px,
+      transparent 4px,
+      transparent 12px
+    );
+    height: 2px;
+    opacity: 0.3;
+  }
+
+  .crescent-icon {
+    position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+  }
+
+  .progress-ring {
+    transition: stroke-dashoffset 0.5s ease;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+  }
+
+  /* Nav active state */
+  .nav-active {
+    color: #D4A853;
+    position: relative;
+  }
+  .nav-active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #D4A853;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0A1628;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1E2D45;
+    border-radius: 4px;
+  }
+
+  /* Arabic text */
+  .arabic-text {
+    font-family: 'Amiri', 'Noto Naskh Arabic', serif;
+    direction: rtl;
+    line-height: 2;
+  }
+
+  /* Pulse animation for countdown */
+  @keyframes gentle-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+  .animate-gentle-pulse {
+    animation: gentle-pulse 2s ease-in-out infinite;
+  }
+
+  /* Star twinkle */
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
 }
