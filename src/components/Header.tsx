@@ -1,6 +1,7 @@
 'use client';
 
-import { Moon } from 'lucide-react';
+import Link from 'next/link';
+import { Moon, Settings } from 'lucide-react';
 
 export default function Header() {
   return (
@@ -13,16 +14,24 @@ export default function Header() {
         <div className="absolute right-[35%] top-[50%] h-0.5 w-0.5 rounded-full bg-teal/30" style={{ animation: 'twinkle 5s ease-in-out infinite 2s' }} />
       </div>
       
-      <div className="relative flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/10">
-          <Moon size={22} className="text-gold" fill="currentColor" />
+      <div className="relative flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/10">
+            <Moon size={22} className="text-gold" fill="currentColor" />
+          </div>
+          <div>
+            <h1 className="text-gradient-gold text-lg font-bold tracking-tight">
+              Ramadan Companion
+            </h1>
+            <p className="text-xs text-text-secondary">1447 AH</p>
+          </div>
         </div>
-        <div>
-          <h1 className="text-gradient-gold text-lg font-bold tracking-tight">
-            Ramadan Companion
-          </h1>
-          <p className="text-xs text-text-secondary">1447 AH</p>
-        </div>
+        <Link
+          href="/settings"
+          className="flex h-9 w-9 items-center justify-center rounded-xl bg-surface text-text-secondary hover:text-text-primary transition-colors"
+        >
+          <Settings size={18} />
+        </Link>
       </div>
     </header>
   );

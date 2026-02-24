@@ -4,7 +4,7 @@ import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
   title: 'Ramadan Companion 2026',
-  description: 'Your beautiful companion for Ramadan 1447 AH — prayer times, Quran tracker, duas, and goals.',
+  description: 'Your beautiful companion for Ramadan 1447 AH — prayer times, Quran tracker, tasbeeh counter, duas, and goals. Built with love for Durban, South Africa.',
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
@@ -14,6 +14,17 @@ export const metadata: Metadata = {
   icons: {
     icon: '/icon-192.png',
     apple: '/icon-192.png',
+  },
+  openGraph: {
+    title: 'Ramadan Companion 2026 ☽',
+    description: 'Prayer times, fasting countdown, Quran tracker, tasbeeh counter, duas & goals — your personal Ramadan companion for 1447 AH.',
+    type: 'website',
+    siteName: 'Ramadan Companion',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ramadan Companion 2026 ☽',
+    description: 'Prayer times, fasting countdown, Quran tracker, tasbeeh counter & duas — beautifully designed for Ramadan 1447 AH.',
   },
 };
 
