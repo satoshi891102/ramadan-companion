@@ -6,6 +6,7 @@ import CountdownTimer from '@/components/CountdownTimer';
 import PrayerTimesCard from '@/components/PrayerTimesCard';
 import DateCard from '@/components/DateCard';
 import QuickStats from '@/components/QuickStats';
+import RamadanCalendar from '@/components/RamadanCalendar';
 import { fetchPrayerTimes, getTodayTimings } from '@/lib/prayer-times';
 import type { DayTimings, PrayerTimes } from '@/lib/prayer-times';
 import { getState } from '@/lib/storage';
@@ -53,6 +54,7 @@ export default function HomePage() {
           <>
             <CountdownTimer fajrTime={timings.Fajr} maghribTime={timings.Maghrib} />
             <DateCard todayTimings={todayTimings} />
+            <RamadanCalendar />
             <QuickStats />
             <PrayerTimesCard timings={timings} />
           </>

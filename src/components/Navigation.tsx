@@ -2,14 +2,14 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, BookOpen, HandHeart, Target, Settings } from 'lucide-react';
+import { Home, BookOpen, HandHeart, Target, Repeat } from 'lucide-react';
 
 const navItems = [
   { href: '/', icon: Home, label: 'Home' },
   { href: '/quran', icon: BookOpen, label: 'Quran' },
+  { href: '/tasbeeh', icon: Repeat, label: 'Tasbeeh' },
   { href: '/duas', icon: HandHeart, label: 'Duas' },
   { href: '/goals', icon: Target, label: 'Goals' },
-  { href: '/settings', icon: Settings, label: 'Settings' },
 ];
 
 export default function Navigation() {
