@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ramadan Companion 2026 ☽
 
-## Getting Started
+Your beautiful companion for Ramadan 1447 AH — prayer times, Quran tracker, tasbeeh counter, duas, and goals.
 
-First, run the development server:
+**Live:** [ramadan-companion-henna.vercel.app](https://ramadan-companion-henna.vercel.app)
+
+## Features
+
+- **Home** — Live fasting countdown (suhoor/iftar), Hijri date, daily hadith/ayah, 30-day fasting calendar, prayer times
+- **Quran Tracker** — 30 Juz progress with Arabic names, daily reading suggestions
+- **Tasbeeh Counter** — Interactive dhikr counter with 6 types (SubhanAllah, Alhamdulillah, Allahu Akbar, La ilaha illAllah, Astaghfirullah, Salawat), circular progress ring, daily totals
+- **Duas** — Categorized collection (Essential, Night, Special) with Arabic + transliteration + English translation
+- **Goals** — Custom Ramadan goals with progress tracking
+- **Settings** — City selector (10 popular cities + custom), calculation method (15 methods), preferences
+
+## Design
+
+- Dark navy (#0A1628) background with gold (#D4A853) and teal (#2EC4B6) accents
+- Glass morphism cards with subtle glow effects
+- Arabic typography (Amiri font) for Quranic text
+- Mobile-first PWA (installable on phone)
+- Twinkling star decorations in header
+
+## Data
+
+- **Prayer times:** Real-time from [Aladhan API](https://aladhan.com/prayer-times-api) — supports any city worldwide
+- **Daily inspiration:** 30 hadith and ayat from Sahih al-Bukhari, Sahih Muslim, Sunan al-Tirmidhi, and the Quran
+- **User data:** All stored in localStorage (fasting days, Quran progress, goals, tasbeeh counts, settings)
+
+## Tech Stack
+
+- Next.js 16 (Turbopack)
+- Tailwind CSS 4
+- TypeScript
+- Lucide React icons
+- Vercel deployment
+
+## Setup
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Default Location
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Durban, South Africa — changeable in Settings.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built with بصيرة (basirah — inner sight) during Ramadan 1447 AH.
